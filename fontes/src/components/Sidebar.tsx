@@ -19,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ title, menuItems }) => {
   };
 
   return (
-    <div className="fixed top-0 left-0 bg-primary text-text w-full shadow-md">
+    <div className="fixed top-0 left-0 bg-[var(--color-primary)] text-text w-full shadow-md">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">

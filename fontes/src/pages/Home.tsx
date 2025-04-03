@@ -1,6 +1,5 @@
+import React, { useEffect, useState } from "react";
 import CustomButton from "@/components/ButtonLink";
-
-import React from "react";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 
 const buttons = [
@@ -33,16 +32,35 @@ const buttons = [
     hover: "hover:bg-blue-600",
   },
 ];
+// Defina a interface para os dados do perfil do GitHub
+interface GitHubProfile {
+  name: string;
+  avatar_url: string;
+}
 
-const Home: React.FC = () => {
+const GitHubProfile: React.FC = () => {
+  const [profile, setProfile] = useState<GitHubProfile | null>(null);
+
+  useEffect(() => {
+    // Requisição à API do GitHub para pegar informações do perfil
+    fetch("https://api.github.com/users/girlando-junior")
+      .then((response) => response.json())
+      .then((data: GitHubProfile) => setProfile(data))
+      .catch((error) => console.error("Erro ao buscar dados do perfil", error));
+  }, []);
+
+  if (!profile) return <div>Carregando...</div>;
+
   return (
     <section
       id="home"
-      className="h-screen flex items-center justify-center bg-gray-100"
+      className="h-screen flex items-center justify-center bg-gray-100 gap-[80px]"
     >
-      <div className="bg-primary">
+      <div className="flex flex-col items-center">
         <p>Meu nome é Girlando Junior e sou</p>
-        <h4>Desenvolvedor Front-end</h4>
+        <h1 className="text-[var(--color-primary)] text-[56px] font-bold drop-shadow-lg">
+          Desenvolvedor Front-end
+        </h1>
         <p>
           Transformo necessidades em aplicações reais, evolventes e funcionais.
           Desenvolvo sistemas<br></br> através da minha paixão pela tecnologia,
@@ -56,8 +74,18 @@ const Home: React.FC = () => {
           ))}
         </div>
       </div>
+
+      <div>
+        <img
+          className="rounded-[100px]"
+          src={profile.avatar_url}
+          alt="Foto do Perfil"
+          width={247}
+          height={266}
+        />
+      </div>
     </section>
   );
 };
 
-export default Home;
+export default GitHubProfile;
