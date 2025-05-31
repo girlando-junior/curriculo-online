@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Sidebar";
 import Home from "./pages/Home";
 import Sobre from "./pages/Sobre-Mim";
+import img from "./assets/img/logo.jpg";
 
 const App: React.FC = () => {
   const title = "Meu Portfólio";
@@ -15,7 +16,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <Navbar title={title} menuItems={menuItems} />
+      <Navbar logo={img} title={title} menuItems={menuItems} />
       <main className="pt-16">
         <Home />
         <Sobre />

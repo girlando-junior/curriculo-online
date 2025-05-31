@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CustomButton from "@/components/ButtonLink";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import SkeletonHome from "@/components/SkeletonHome";
 
 const buttons = [
   {
@@ -20,7 +21,7 @@ const buttons = [
     icon: FaGithub,
     color: "bg-blue-400",
     border: "rounded-full",
-    hover: "hover:bg-gray-900",
+    hover: "hover:bg-blue-900",
   },
   {
     height: "55px",
@@ -29,7 +30,7 @@ const buttons = [
     icon: FaTwitter,
     color: "bg-blue-400",
     border: "rounded-full",
-    hover: "hover:bg-blue-600",
+    hover:"hover:bg-blue-900",
   },
 ];
 // Defina a interface para os dados do perfil do GitHub
@@ -49,15 +50,14 @@ const GitHubProfile: React.FC = () => {
       .catch((error) => console.error("Erro ao buscar dados do perfil", error));
   }, []);
 
-  if (!profile) return <div>Carregando...</div>;
-
+  if (!profile) return <SkeletonHome />;
   return (
     <section
       id="home"
       className="h-screen flex items-center justify-center bg-gray-100 gap-[80px]"
     >
       <div className="flex flex-col items-center">
-        <p>Meu nome é Girlando Junior e sou</p>
+        <p>Meu nome é {profile.name} e sou</p>
         <h1 className="text-[var(--color-primary)] text-[56px] font-bold drop-shadow-lg">
           Desenvolvedor Front-end
         </h1>
