@@ -69,7 +69,7 @@ const Sobre: React.FC = () => {
   return (
     <section
       id="sobre"
-      className="bg-[var(--color-primary-300)] h-screen flex flex-col items-center px-[80px] py-[72px]"
+      className="bg-[var(--color-primary-300)] min-h-screen flex flex-col items-center px-[80px] py-[72px]"
     >
       <div className="text-white rounded-lg mx-auto">
         <h2 className="text-3xl font-bold text-center w-full">Sobre mim</h2>
