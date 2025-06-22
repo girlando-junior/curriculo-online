@@ -57,7 +57,6 @@ const GitHubProfile: React.FC = () => {
   const apiKey = import.meta.env.VITE_GITHUB_API_KEY;
 
   useEffect(() => {
-    console.log("apiKey:", apiKey); // Aqui você vê o valor da variável
     fetch("https://api.github.com/users/girlando-junior", {
       headers: {
         Authorization: `Bearer ${apiKey}`,
