@@ -57,17 +57,25 @@ const GitHubProfile: React.FC = () => {
   const apiKey = import.meta.env.VITE_GITHUB_API_KEY;
 
   useEffect(() => {
-    // Requisição à API do GitHub para pegar informações do perfil
-    fetch("https://api.github.com/users/girlando-junior", {
-      headers: {
-        Authorization:
-          `Bearer ${apiKey}`
-      },
+  console.log("apiKey:", apiKey); // Aqui você vê o valor da variável
+  fetch("https://api.github.com/users/girlando-junior", {
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+    },
+  })
+    .then((response) => {
+      console.log("Status da resposta:", response.status);
+      return response.json();
     })
-      .then((response) => response.json())
-      .then((data: GitHubProfile) => setProfile(data))
-      .catch((error) => console.error("Erro ao buscar dados do perfil", error));
-  }, []);
+    .then((data: GitHubProfile) => {
+      console.log("Dados recebidos do perfil:", data);
+      setProfile(data);
+    })
+    .catch((error) => {
+      console.error("Erro ao buscar dados do perfil", error);
+    });
+}, []);
+
 
   if (!profile) return <SkeletonHome />;
   return (
