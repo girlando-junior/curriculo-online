@@ -16,7 +16,7 @@ interface CustomButtonProps {
 
 const CustomButton: React.FC<CustomButtonProps> = ({
   height = "40px",
-  width = "120px",
+  width = "100%",
   icon: Icon,
   name = "Button",
   color = "bg-blue-500",
@@ -31,6 +31,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       target="_blank"
       rel="noopener noreferrer"
       onClick={(e) => disabled && e.preventDefault()}
+      style={{ height, width }}
     >
       <button
         type="button"

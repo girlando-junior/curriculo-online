@@ -16,8 +16,12 @@ const Navbar: React.FC<NavbarProps> = ({ logo, menuItems }) => {
 
   const rolarParaSessao = (id: string) => {
     const section = document.getElementById(id);
+    const alturaNavbar = 70;
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const y =
+        section.getBoundingClientRect().top + window.pageYOffset - alturaNavbar;
+
+      window.scrollTo({ top: y, behavior: "smooth" });
       setarMenuAberto(false);
     }
   };

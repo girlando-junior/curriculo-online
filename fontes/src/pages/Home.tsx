@@ -45,7 +45,7 @@ const buttons = [
     link: "https://www.instagram.com/girlando_18y/",
   },
 ];
-// Defina a interface para os dados do perfil do GitHub
+
 interface GitHubProfile {
   name: string;
   avatar_url: string;
@@ -57,16 +57,18 @@ const GitHubProfile: React.FC = () => {
   const apiKey = import.meta.env.VITE_GITHUB_API_KEY;
 
   useEffect(() => {
-    // Requisição à API do GitHub para pegar informações do perfil
     fetch("https://api.github.com/users/girlando-junior", {
       headers: {
-        Authorization:
-          `Bearer ${apiKey}`
+        Authorization: `Bearer ${apiKey}`,
       },
     })
-      .then((response) => response.json())
-      .then((data: GitHubProfile) => setProfile(data))
-      .catch((error) => console.error("Erro ao buscar dados do perfil", error));
+      .then((response) => {
+        return response.json();
+      })
+      .then((data: GitHubProfile) => {
+        setProfile(data);
+      })
+      .catch(() => {});
   }, []);
 
   if (!profile) return <SkeletonHome />;
