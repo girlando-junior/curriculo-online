@@ -1,6 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import CardProjetos from "@/components/CardProjetos";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -53,22 +54,11 @@ const Projetos: React.FC = () => {
         pagination={{ clickable: true }}
         navigation={true}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
-        className="w-full max-w-7xl"
+        className="w-full max-w-7xl pb-14"
       >
         {slides.map(({ title, description, buttonText }, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-[var(--color-primary)] rounded-lg shadow-md p-6 flex flex-col justify-between h-full">
-              <div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">{title}</h3>
-                <p className="text-gray-600 mb-4">{description}</p>
-              </div>
-              <button
-                type="button"
-                className="self-start bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition"
-              >
-                {buttonText}
-              </button>
-            </div>
+            <CardProjetos />
           </SwiperSlide>
         ))}
       </Swiper>

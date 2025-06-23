@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Sobre from "./pages/Sobre-Mim";
 import img from "./assets/img/logo.jpg";
 import Projetos from "./pages/Projetos";
+import Footer from "./pages/Footer";
 
 const App: React.FC = () => {
   const title = "Meu Portfólio";
@@ -22,6 +23,7 @@ const App: React.FC = () => {
         <Home />
         <Sobre />
         <Projetos/>
+        <Footer/>
       </main>
     </div>
   );
