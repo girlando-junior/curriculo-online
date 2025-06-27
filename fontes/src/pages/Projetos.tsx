@@ -28,7 +28,6 @@ const slides = [
     description: "Descrição do projeto 4, código limpo e eficiente.",
     buttonText: "Ver Projeto",
   },
-  // Adicione quantos quiser
 ];
 
 const Projetos: React.FC = () => {
