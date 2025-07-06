@@ -31,7 +31,6 @@ const Sobre: React.FC = () => {
         </h2>
 
         <div className="mt-8 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
-          {/* Texto */}
           <div className="flex flex-col gap-4 w-full lg:w-2/3">
             <h3 className="text-lg sm:text-xl font-bold">Conheça-me!</h3>
             <p className="text-gray-300 text-sm sm:text-base text-justify">
