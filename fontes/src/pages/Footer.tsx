@@ -46,11 +46,14 @@ const buttons = [
 ];
 
 const Footer: React.FC = () => {
+  const dataAno = new Date().getFullYear();
+
   return (
-    <footer className="bg-[var(--color-primary)] px-[80px] py-[12px] flex flex-col gap-[10px]">
-      <div className="text-white rounded-lg py-[80px]">
-        <div className="flex flex-col md:flex-row items-start justify-between">
-          <div className="flex flex-col gap-4 w-1/2">
+    <footer className="bg-[var(--color-primary)] px-4 sm:px-8 md:px-16 lg:px-20 py-12 flex flex-col gap-10">
+      <div className="text-white w-full max-w-screen-xl mx-auto">
+        <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-8 text-center md:text-left">
+          {/* Seção de descrição */}
+          <div className="flex flex-col gap-4 w-full md:w-1/2">
             <h1 className="text-xl font-bold">Girlando Junior</h1>
             <p className="text-gray-300">
               Um desenvolvedor web focado em front-end construindo o front-end
@@ -58,9 +61,10 @@ const Footer: React.FC = () => {
             </p>
           </div>
 
-          <div className="mt-6 md:mt-0">
+          {/* Seção social */}
+          <div className="w-full md:w-auto">
             <h3 className="text-xl font-bold">Social</h3>
-            <div className="flex gap-4 mt-4">
+            <div className="flex justify-center md:justify-start gap-4 mt-4 flex-wrap">
               {buttons.map((btn, index) => (
                 <CustomButton key={index} {...btn} />
               ))}
@@ -69,8 +73,10 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="h-[90px] flex items-center justify-center border-t border-solid border-[#DDDDDD]">
-        <p className="text-white">Feito por Girlando Junior  © Todos os direitos reservados</p>
+      <div className="py-4 flex items-center justify-center border-t border-solid border-[#DDDDDD]">
+        <p className="text-white text-sm text-center">
+          © {dataAno} Girlando Junior. Todos os direitos reservados.
+        </p>
       </div>
     </footer>
   );
