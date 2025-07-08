@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
   const dataAno = new Date().getFullYear();
 
   return (
-    <footer className="bg-[var(--color-primary)] px-4 sm:px-8 md:px-16 lg:px-20 py-12 flex flex-col gap-10">
+    <footer className="bg-[var(--color-primary)] px-4 sm:px-8 md:px-16 lg:px-20 py-4 flex flex-col gap-10">
       <div className="text-white w-full max-w-screen-xl mx-auto">
         <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-8 text-center md:text-left">
           {/* Seção de descrição */}
