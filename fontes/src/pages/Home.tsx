@@ -77,7 +77,7 @@ const GitHubProfile: React.FC = () => {
     >
       <div>
         <img
-           className="rounded-[100px] w-[220px] sm:w-[247px] md:w-[280px] lg:w-[320px] xl:w-[360px] aspect-square object-cover"
+          className="rounded-[100px] w-[220px] sm:w-[247px] md:w-[280px] lg:w-[320px] xl:w-[360px] aspect-square object-cover"
           src={profile.avatar_url}
           alt="Foto do Perfil"
         />
@@ -89,11 +89,11 @@ const GitHubProfile: React.FC = () => {
           Desenvolvedor Front-end
         </h1>
         <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl mt-2 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-0 max-w-4xl mx-auto leading-relaxed">
-  Transformo necessidades em aplicações reais, envolventes e funcionais.
-  Desenvolvo sistemas através da minha paixão pela tecnologia, contribuindo
-  com soluções inovadoras e eficazes para desafios complexos.
-</p>
-
+          Transformo necessidades em aplicações reais, envolventes e funcionais.
+          Desenvolvo sistemas através da minha paixão pela tecnologia,
+          contribuindo com soluções inovadoras e eficazes para desafios
+          complexos.
+        </p>
 
         <div className="flex gap-4 mt-4 flex-wrap justify-center">
           {buttons.map((btn, index) => (

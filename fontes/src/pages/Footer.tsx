@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
     <footer className="bg-[var(--color-primary)] px-4 sm:px-8 md:px-16 lg:px-20 py-4 flex flex-col gap-10">
       <div className="text-white w-full max-w-screen-xl mx-auto">
         <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-8 text-center md:text-left">
-          {/* Seção de descrição */}
+
           <div className="flex flex-col gap-4 w-full md:w-1/2">
             <h1 className="text-xl font-bold">Girlando Junior</h1>
             <p className="text-gray-300">
@@ -61,7 +61,6 @@ const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* Seção social */}
           <div className="w-full md:w-auto">
             <h3 className="text-xl font-bold">Social</h3>
             <div className="flex justify-center md:justify-start gap-4 mt-4 flex-wrap">
