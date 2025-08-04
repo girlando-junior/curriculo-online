@@ -3,6 +3,9 @@ import Navbar from "./components/Sidebar";
 import Home from "./pages/Home";
 import Sobre from "./pages/Sobre-Mim";
 import img from "./assets/img/logo.jpg";
+import Projetos from "./pages/Projetos";
+import Footer from "./pages/Footer";
+import Contato from "./pages/Contato";
 
 const App: React.FC = () => {
   const title = "Meu Portfólio";
@@ -20,6 +23,9 @@ const App: React.FC = () => {
       <main className="pt-16">
         <Home />
         <Sobre />
+        <Projetos/>
+        <Contato/>
+        <Footer/>
       </main>
     </div>
   );

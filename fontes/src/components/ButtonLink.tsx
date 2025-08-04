@@ -12,11 +12,12 @@ interface CustomButtonProps {
   hover?: string;
   link?: string;
   disabled?: boolean;
+  download?: boolean;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
   height = "40px",
-  width = "120px",
+  width = "100%",
   icon: Icon,
   name = "Button",
   color = "bg-blue-500",
@@ -24,6 +25,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   hover = "hover:bg-blue-700",
   link = "",
   disabled = false,
+  download = false
 }) => {
   return (
     <a
@@ -31,6 +33,8 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       target="_blank"
       rel="noopener noreferrer"
       onClick={(e) => disabled && e.preventDefault()}
+      style={{ height, width }}
+      download={download}
     >
       <button
         type="button"
